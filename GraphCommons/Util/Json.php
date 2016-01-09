@@ -80,7 +80,7 @@ final class Json
      * @param  mixed $data
      * @return self
      */
-    final public function setData($data): self
+    final public function setData($data)
     {
         $this->data = $data;
         return $this;
@@ -99,11 +99,12 @@ final class Json
     /**
      * Encoder.
      *
-     * @param  array $args
      * @return string
      */
-    final public function encode(...$args): string
+    final public function encode()
     {
+        $args = func_get_args();
+
         // add data as first arg
         array_unshift($args, $this->data);
 
@@ -121,14 +122,15 @@ final class Json
     /**
      * Decoder.
      *
-     * @param  array $args
      * @return mixed
      */
-    final public function decode(...$args)
+    final public function decode()
     {
         if ($this->data === '') {
             return null;
         }
+
+        $args = func_get_args();
 
         // add data as first arg
         array_unshift($args, $this->data);
@@ -149,7 +151,7 @@ final class Json
      *
      * @return bool
      */
-    final public function hasError(): bool
+    final public function hasError()
     {
         return ($this->errorCode > 0);
     }
@@ -172,7 +174,7 @@ final class Json
      *
      * @return array
      */
-    final public function getError(): array
+    final public function getError()
     {
         return array(
             'code' => $this->errorCode,
@@ -185,7 +187,7 @@ final class Json
      *
      * @return int
      */
-    final public function getErrorCode(): int
+    final public function getErrorCode()
     {
         return $this->errorCode;
     }
@@ -195,7 +197,7 @@ final class Json
      *
      * @return string
      */
-    final public function getErrorMessage(): string
+    final public function getErrorMessage()
     {
         return $this->errorMessage;
     }

@@ -84,7 +84,7 @@ abstract class Util
      * @param  bool      $deep
      * @return array
      */
-    final public static function toArray(\stdClass $input, $deep = true): array
+    final public static function toArray(\stdClass $input, $deep = true)
     {
         $return = array();
         foreach ($input as $key => $value) {
@@ -105,7 +105,7 @@ abstract class Util
      * @param  bool   $deep
      * @return \stdClass
      */
-    final public static function toObject(array $input, $deep = true): \stdClass
+    final public static function toObject(array $input, $deep = true)
     {
         $return = new \stdClass();
         foreach ($input as $key => $value) {
@@ -126,7 +126,7 @@ abstract class Util
      * @param  string $headers
      * @return array
      */
-    final public static function parseResponseHeaders(string $headers): array
+    final public static function parseResponseHeaders($headers)
     {
         $return  = array();
         $headers = array_map('trim', (array) explode("\r\n", $headers));

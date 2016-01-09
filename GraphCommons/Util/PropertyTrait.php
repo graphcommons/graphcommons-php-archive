@@ -44,7 +44,7 @@ trait PropertyTrait
      *
      * @return bool
      */
-    final public function isReadonly(): bool
+    final public function isReadonly()
     {
         return ($this->_readonly === true);
     }
@@ -55,9 +55,9 @@ trait PropertyTrait
      * @param  bool $_readonly
      * @return self
      */
-    final public function setReadonly(bool $_readonly): self
+    final public function setReadonly($_readonly)
     {
-        $this->_readonly = $_readonly;
+        $this->_readonly = (bool) $_readonly;
 
         return $this;
     }
@@ -67,7 +67,7 @@ trait PropertyTrait
      *
      * @return bool
      */
-    final public function getReadonly(): bool
+    final public function getReadonly()
     {
         return $this->_readonly;
     }
@@ -79,7 +79,7 @@ trait PropertyTrait
      * @param mixed  $value
      * @throws \Exception
      */
-    public function __set(string $name, $value)
+    public function __set($name, $value)
     {
         if ($this->_readonly) {
             throw new \Exception(sprintf('%s object is readonly!',
@@ -96,7 +96,7 @@ trait PropertyTrait
      * @return mixed
      * @throws \Exception
      */
-    public function __get(string $name)
+    public function __get($name)
     {
         if (!property_exists($this, $name)) {
             throw new \Exception(sprintf('%s property is not exists on %s',
@@ -112,7 +112,7 @@ trait PropertyTrait
      * @param  string $name
      * @return bool
      */
-    public function __isset(string $name): bool
+    public function __isset($name)
     {
         if (property_exists($this, $name)) {
             return isset($this->{$name});
@@ -127,7 +127,7 @@ trait PropertyTrait
      * @param  string $name
      * @return void
      */
-    public function __unset(string $name)
+    public function __unset($name)
     {
         $this->{$name} = null;
     }

@@ -36,11 +36,10 @@ trait SerialTrait
     /**
      * Serialize array to JSON string.
      *
-     * @param  array $args
      * @return string
      * @throws GraphCommons\Util\JsonException
      */
-    public function serialize(...$args): string
+    public function serialize()
     {
         $json = new Json($this->unserialize());
         if ($json->hasError()) {
@@ -51,6 +50,8 @@ trait SerialTrait
             ),  $jsonError['code']);
         }
 
+        $args = func_get_args();
+
         return (string) $json->encode($args);
     }
 
@@ -59,7 +60,7 @@ trait SerialTrait
      *
      * @return array
      */
-    public function unserialize(): array
+    public function unserialize()
     {
         $array = array();
 

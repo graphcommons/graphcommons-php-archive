@@ -57,7 +57,7 @@ class Collection
      * @param  int|string $key
      * @return bool
      */
-    public function __isset($key): bool
+    public function __isset($key)
     {
         return isset($this->data[$key]);
     }
@@ -103,7 +103,7 @@ class Collection
      *
      * @return array
      */
-    public function getData(): array
+    public function getData()
     {
         return $this->data;
     }
@@ -113,7 +113,7 @@ class Collection
      *
      * @return array
      */
-    public function getDataKeys(): array
+    public function getDataKeys()
     {
         return array_keys($this->data);
     }
@@ -123,7 +123,7 @@ class Collection
      *
      * @return array
      */
-    public function getDataValues(): array
+    public function getDataValues()
     {
         return array_values($this->data);
     }
@@ -133,7 +133,7 @@ class Collection
      *
      * @return int
      */
-    public function count(): int
+    public function count()
     {
         return count($this->data);
     }
@@ -143,7 +143,7 @@ class Collection
      *
      * @return \ArrayIterator
      */
-    public function getIterator(): \ArrayIterator
+    public function getIterator()
     {
         return new \ArrayIterator($this->data);
     }
@@ -186,7 +186,7 @@ class Collection
      * @param  int|string $key
      * @return bool
      */
-    public function offsetExists($key): bool
+    public function offsetExists($key)
     {
         return $this->__isset($key);
     }
