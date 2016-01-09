@@ -109,7 +109,7 @@ abstract class Stream
      *
      * @return string
      */
-    final public function __toString(): string
+    final public function __toString()
     {
         return $this->toString();
     }
@@ -120,7 +120,7 @@ abstract class Stream
      * @param  int $type
      * @return self
      */
-    final public function setType(int $type): self
+    final public function setType($type)
     {
         $this->type = $type;
         return $this;
@@ -132,7 +132,7 @@ abstract class Stream
      * @param  string $httpVersion
      * @return self
      */
-    final public function setHttpVersion(string $httpVersion): self
+    final public function setHttpVersion($httpVersion)
     {
         $this->httpVersion = $httpVersion;
         return $this;
@@ -145,7 +145,7 @@ abstract class Stream
      * @param  mixed  $value
      * @return self
      */
-    final public function setHeader(string $key, $value): self
+    final public function setHeader($key, $value)
     {
         $this->headers[$key] = $value;
         return $this;
@@ -157,7 +157,7 @@ abstract class Stream
      * @param  array $headers
      * @return self
      */
-    final public function setHeaders(array $headers): self
+    final public function setHeaders(array $headers)
     {
         $this->headers = $headers;
         return $this;
@@ -169,7 +169,7 @@ abstract class Stream
      * @param  string $body
      * @return self
      */
-    final public function setBody(string $body): self
+    final public function setBody($body)
     {
         $this->body = $body;
         return $this;
@@ -181,7 +181,7 @@ abstract class Stream
      * @param  int $bodyLength
      * @return self
      */
-    final public function setBodyLength(int $bodyLength): self
+    final public function setBodyLength($bodyLength)
     {
         $this->bodyLength = $bodyLength;
         return $this;
@@ -193,7 +193,7 @@ abstract class Stream
      * @param  mixed $bodyData
      * @return self
      */
-    final public function setBodyData($bodyData = null): self
+    final public function setBodyData($bodyData = null)
     {
         $this->bodyData = $bodyData;
         return $this;
@@ -205,7 +205,7 @@ abstract class Stream
      * @param  int $failCode
      * @return self
      */
-    final public function setFailCode(int $failCode): self
+    final public function setFailCode($failCode)
     {
         $this->failCode = $failCode;
         return $this;
@@ -217,7 +217,7 @@ abstract class Stream
      * @param  int $failText
      * @return self
      */
-    final public function setFailText(string $failText): self
+    final public function setFailText($failText)
     {
         $this->failText = $failText;
         return $this;
@@ -228,7 +228,7 @@ abstract class Stream
      *
      * @return int
      */
-    final public function getType(): int
+    final public function getType()
     {
         return $this->type;
     }
@@ -238,7 +238,7 @@ abstract class Stream
      *
      * @return string
      */
-    final public function getHttpVersion(): string
+    final public function getHttpVersion()
     {
         return $this->httpVersion;
     }
@@ -248,7 +248,7 @@ abstract class Stream
      *
      * @return mixed
      */
-    final public function getHeader(string $key)
+    final public function getHeader($key)
     {
         return isset($this->headers[$key]) ? $this->headers[$key] : null;
     }
@@ -258,7 +258,7 @@ abstract class Stream
      *
      * @return array
      */
-    final public function getHeaders(): array
+    final public function getHeaders()
     {
         return $this->headers;
     }
@@ -268,7 +268,7 @@ abstract class Stream
      *
      * @return string
      */
-    final public function getBody(): string
+    final public function getBody()
     {
         return $this->body;
     }
@@ -278,7 +278,7 @@ abstract class Stream
      *
      * @return int
      */
-    final public function getBodyLength(): int
+    final public function getBodyLength()
     {
         return $this->bodyLength;
     }
@@ -290,7 +290,7 @@ abstract class Stream
      * @param  mixed       $valueDefault
      * @return
      */
-    final public function getBodyData(string $key = null, $valueDefault = null)
+    final public function getBodyData($key = null, $valueDefault = null)
     {
         // get all body data
         if ($key === null) {
@@ -305,7 +305,7 @@ abstract class Stream
      *
      * @return GraphCommons\Http\Client
      */
-    final public function getClient(): Client
+    final public function getClient()
     {
         return $this->client;
     }
@@ -315,7 +315,7 @@ abstract class Stream
      *
      * @return bool
      */
-    final public function isFail(): bool
+    final public function isFail()
     {
         return !($this->failCode === 0 && $this->failText === '');
     }
@@ -325,7 +325,7 @@ abstract class Stream
      *
      * @return array
      */
-    final public function getFail(): array
+    final public function getFail()
     {
         // set default
         $fail = array(
@@ -363,7 +363,7 @@ abstract class Stream
      *
      * @return int
      */
-    final public function getFailCode(): int
+    final public function getFailCode()
     {
         return $this->failCode;
     }
@@ -373,7 +373,7 @@ abstract class Stream
      *
      * @return string
      */
-    final public function getFailText(): string
+    final public function getFailText()
     {
         return $this->failText;
     }
@@ -383,12 +383,12 @@ abstract class Stream
      *
      * @return bool
      */
-    abstract public function ok(): bool;
+    abstract public function ok();
 
     /**
      * Pattern.
      *
      * @return string
      */
-    abstract public function toString(): string;
+    abstract public function toString();
 }

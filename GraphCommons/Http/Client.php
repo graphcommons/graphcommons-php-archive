@@ -28,9 +28,12 @@ namespace GraphCommons\Http;
 use GraphCommons\GraphCommons;
 use GraphCommons\Util\Util;
 use GraphCommons\Util\PropertyTrait as Property;
-use GraphCommons\Util\{Json, JsonException};
-use GraphCommons\Http\{Request, Exception\Request as RequestException};
-use GraphCommons\Http\{Response, Exception\Response as ResponseException};
+use GraphCommons\Util\Json;
+use GraphCommons\Util\JsonException;
+use GraphCommons\Http\Request;
+use GraphCommons\Http\Exception\Request as RequestException;
+use GraphCommons\Http\Response;
+use GraphCommons\Http\Exception\Response as ResponseException;
 
 /**
  * @package    GraphCommons
@@ -105,7 +108,7 @@ final class Client
      *
      * @return GraphCommons\Http\Request
      */
-    final public function getRequest(): Request
+    final public function getRequest()
     {
         return $this->request;
     }
@@ -115,7 +118,7 @@ final class Client
      *
      * @return GraphCommons\Http\Response
      */
-    final public function getResponse(): Response
+    final public function getResponse()
     {
         return $this->response;
     }
@@ -131,9 +134,7 @@ final class Client
      * @throws \InvalidArgumentException,
      *         GraphCommons\Http\Exception\Request, GraphCommons\Util\JsonException
      */
-    final public function request(
-        string $uri, array $uriParams = null,
-        string $body = '', array $headers = null): Response
+    final public function request($uri, array $uriParams = null, $body = '', array $headers = null)
     {
         // match for a valid request i.e: GET /foo
         preg_match('~^([a-z]+)\s+(/.*)~i', $uri, $match);
@@ -229,7 +230,7 @@ final class Client
      * @param  array  headers
      * @return self.request()
      */
-    final public function get($uri, array $uriParams = null, array $headers = null): Response
+    final public function get($uri, array $uriParams = null, array $headers = null)
     {
         return $this->request(Request::METHOD_GET .' /'. $uri, $uriParams, '', $headers);
     }
@@ -243,7 +244,7 @@ final class Client
      * @param  array  $headers
      * @return self.request()
      */
-    final public function post($uri, array $uriParams = null, $body = '', array $headers = null): Response
+    final public function post($uri, array $uriParams = null, $body = '', array $headers = null)
     {
         return $this->request(Request::METHOD_POST .' /'. $uri, $uriParams, $body, $headers);
     }
@@ -257,7 +258,7 @@ final class Client
      * @param  array  $headers
      * @return self.request()
      */
-    final public function put($uri, array $uriParams = null, $body = '', array $headers = null): Response
+    final public function put($uri, array $uriParams = null, $body = '', array $headers = null)
     {
         return $this->request(Request::METHOD_PUT .' /'. $uri, $uriParams, $body, $headers);
     }
@@ -265,7 +266,7 @@ final class Client
     /**
      * @notimplemented
      */
-    final public function head($uri, array $uriParams = null, array $headers = null): Response
+    final public function head($uri, array $uriParams = null, array $headers = null)
     {
         throw new \RuntimeException('HEAD method not implemented yet on API side!');
     }
@@ -273,7 +274,7 @@ final class Client
     /**
      * @notimplemented
      */
-    final public function delete($uri, array $uriParams = null, array $headers = null): Response
+    final public function delete($uri, array $uriParams = null, array $headers = null)
     {
         throw new \RuntimeException('DELETE method not implemented yet on API side!');
     }

@@ -83,7 +83,7 @@ final class Request extends Stream
      * @param  string $method
      * @return self
      */
-    final public function setMethod(string $method): self
+    final public function setMethod($method)
     {
         $this->method = strtoupper($method);
         return $this;
@@ -95,7 +95,7 @@ final class Request extends Stream
      * @param  string $uri
      * @return self
      */
-    final public function setUri(string $uri, array $uriParams = []): self
+    final public function setUri($uri, array $uriParams = [])
     {
         $this->uri = $uri;
         if (!empty($uriParams)) {
@@ -113,7 +113,7 @@ final class Request extends Stream
      * @param  mixed  $value
      * @return self
      */
-    final public function setUriParam(string $key, $value): self
+    final public function setUriParam($key, $value)
     {
         $this->uriParams[$key] = $value;
         return $this;
@@ -125,7 +125,7 @@ final class Request extends Stream
      * @param  string $uri
      * @return self
      */
-    final public function setUriParams(array $uriParams = []): self
+    final public function setUriParams(array $uriParams = [])
     {
         $this->uriParams = $uriParams;
         return $this;
@@ -136,7 +136,7 @@ final class Request extends Stream
      *
      * @return string
      */
-    final public function getMethod(): string
+    final public function getMethod()
     {
         return $this->method;
     }
@@ -147,7 +147,7 @@ final class Request extends Stream
      * @param  string $key
      * @return mixed
      */
-    final public function getUriParam(string $key)
+    final public function getUriParam($key)
     {
         return isset($this->uriParams[$key]) ? $this->uriParams[$key] : null;
     }
@@ -157,7 +157,7 @@ final class Request extends Stream
      *
      * @return array
      */
-    final public function getUriParams(): array
+    final public function getUriParams()
     {
         return $this->uriParams;
     }
@@ -167,13 +167,13 @@ final class Request extends Stream
      *
      * @return bool
      */
-    final public function ok(): bool
+    final public function ok()
     {
         return !$this->isFail();
     }
 
     // @wait
-    final public function toString(): string
+    final public function toString()
     {}
 
     /**

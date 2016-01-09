@@ -88,7 +88,7 @@ final class Response extends Stream
      * @param  string $status
      * @return self
      */
-    final public function setStatus(string $status): self
+    final public function setStatus($status)
     {
         $this->status = $status;
         return $this;
@@ -100,7 +100,7 @@ final class Response extends Stream
      * @param  int $statusCode
      * @return self
      */
-    final public function setStatusCode(int $statusCode): self
+    final public function setStatusCode($statusCode)
     {
         $this->statusCode = $statusCode;
         return $this;
@@ -112,7 +112,7 @@ final class Response extends Stream
      * @param  string $statusText
      * @return self
      */
-    final public function setStatusText(string $statusText): self
+    final public function setStatusText($statusText)
     {
         $this->statusText = $statusText;
         return $this;
@@ -123,7 +123,7 @@ final class Response extends Stream
      *
      * @return string
      */
-    final public function getStatus(): string
+    final public function getStatus()
     {
         return $this->status;
     }
@@ -133,7 +133,7 @@ final class Response extends Stream
      *
      * @return int
      */
-    final public function getStatusCode(): int
+    final public function getStatusCode()
     {
         return $this->statusCode;
     }
@@ -143,7 +143,7 @@ final class Response extends Stream
      *
      * @return string
      */
-    final public function getStatusText(): string
+    final public function getStatusText()
     {
         return $this->statusText;
     }
@@ -153,12 +153,12 @@ final class Response extends Stream
      *
      * @return bool
      */
-    final public function ok(): bool
+    final public function ok()
     {
         return ($this->statusCode === self::STATUS_OK);
     }
 
     // @wait
-    final function toString(): string
+    final function toString()
     {}
 }
