@@ -155,7 +155,7 @@ final class Response extends Stream
      */
     final public function ok()
     {
-        return ($this->statusCode === self::STATUS_OK);
+        return ($this->statusCode >= 400);
     }
 
     // @wait
