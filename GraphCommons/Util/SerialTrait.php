@@ -74,9 +74,9 @@ trait SerialTrait
                 // check if value has unserialize method
                 if (is_object($value) && method_exists($value, 'unserialize')) {
                     $array[$key] = $value->unserialize();
-                    continue;
+                } else {
+                    $array[$key] = $value;
                 }
-                $array[$key] = $value;
             }
         }
 
