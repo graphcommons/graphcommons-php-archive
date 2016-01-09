@@ -112,7 +112,7 @@ final class GraphCommons
      *
      * @return string.
      */
-    final public function getApiKey(): string
+    final public function getApiKey()
     {
         return $this->apiKey;
     }
@@ -122,7 +122,7 @@ final class GraphCommons
      *
      * @return string
      */
-    final public static function getVersion(): string
+    final public static function getVersion()
     {
         return self::VERSION;
     }
@@ -132,7 +132,7 @@ final class GraphCommons
      *
      * @return GraphCommons\Http\Client
      */
-    final public function getClient(): Client
+    final public function getClient()
     {
         return $this->client;
     }

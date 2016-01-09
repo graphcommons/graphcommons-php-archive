@@ -26,8 +26,8 @@
 namespace GraphCommons;
 
 // add simply php version check
-if ('7' != PHP_VERSION[0]) {
-    throw new \RuntimeException('GraphCommons-PHP requires minimum PHP 7 version!');
+if (version_compare(PHP_VERSION, '5.4.0', '<')) {
+    throw new \RuntimeException('GraphCommons-PHP requires minimum PHP 5.4.0 version!');
 }
 
 /**
@@ -54,7 +54,7 @@ final class Autoload
      *
      * @return GraphCommons\Autoload
      */
-    final public static function init(): self
+    final public static function init()
     {
         if (self::$instance == null) {
             self::$instance = new self();

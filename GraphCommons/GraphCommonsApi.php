@@ -28,23 +28,20 @@ namespace GraphCommons;
 use GraphCommons\GraphCommons;
 use GraphCommons\GraphCommonsApiException;
 use GraphCommons\Util\Util;
-use GraphCommons\Util\{Json, JsonException};
+use GraphCommons\Util\Json;
+use GraphCommons\Util\JsonException;
 use GraphCommons\Graph\Graph;
-use GraphCommons\Graph\{Signal, SignalCollection};
+use GraphCommons\Graph\Signal;
+use GraphCommons\Graph\SignalCollection;
 use GraphCommons\Graph\Entity\Image as GraphImage;
 use GraphCommons\Graph\Entity\License as GraphLicense;
 use GraphCommons\Graph\Entity\Layout as GraphLayout;
-use GraphCommons\Graph\Entity\{
-    User as GraphUser, Users as GraphUsers
-};
-use GraphCommons\Graph\Entity\{
-    Node as GraphNode, Nodes as GraphNodes,
-    NodeType as GraphNodeType, NodeTypes as GraphNodeTypes
-};
-use GraphCommons\Graph\Entity\{
-    Edge as GraphEdge, Edges as GraphEdges,
-    EdgeType as GraphEdgeType, EdgeTypes as GraphEdgeTypes
-};
+use GraphCommons\Graph\Entity\User as GraphUser;
+use GraphCommons\Graph\Entity\Users as GraphUsers;
+use GraphCommons\Graph\Entity\Nodes as GraphNodes;
+use GraphCommons\Graph\Entity\NodeTypes as GraphNodeTypes;
+use GraphCommons\Graph\Entity\Edge as GraphEdge;
+use GraphCommons\Graph\Entity\EdgeTypes as GraphEdgeTypes;
 
 /**
  * @package GraphCommons
@@ -83,7 +80,7 @@ final class GraphCommonsApi
      * @return array
      * @throws GraphCommons\GraphCommonsApiException
      */
-    final public function status(): array
+    final public function status()
     {
         $response = $this->graphCommons->client->get('/status');
         if (!$response->ok()) {
@@ -103,7 +100,7 @@ final class GraphCommonsApi
      * @return GraphCommons\Graph\Graph
      * @throws GraphCommons\GraphCommonsApiException
      */
-    final public function getGraph(string $id): Graph
+    final public function getGraph(string $id)
     {
         $response = $this->graphCommons->client->get('/graphs/'. $id);
         if (!$response->ok()) {
@@ -294,7 +291,7 @@ final class GraphCommonsApi
      * @return GraphCommons\Graph\Graph
      * @throws GraphCommons\GraphCommonsApiException
      */
-    final public function addGraph($body): Graph
+    final public function addGraph($body)
     {
         $body = $this->serializeBody($body);
 
@@ -317,7 +314,7 @@ final class GraphCommonsApi
      * @return GraphCommons\Graph\Graph
      * @throws GraphCommons\GraphCommonsApiException
      */
-    final public function addGraphSignal(string $id, SignalCollection $body): Graph
+    final public function addGraphSignal(string $id, SignalCollection $body)
     {
         $body = $this->serializeBody($body);
 
@@ -339,7 +336,7 @@ final class GraphCommonsApi
      * @return GraphCommons\Graph\Entity\Node
      * @throws GraphCommons\GraphCommonsApiException
      */
-    final public function getNode(string $id): GraphNode
+    final public function getNode(string $id)
     {
         $response = $this->graphCommons->client->get('/nodes/'. $id);
         if (!$response->ok()) {
@@ -359,7 +356,7 @@ final class GraphCommonsApi
      * @return GraphCommons\Graph\Entity\Nodes
      * @throws GraphCommons\GraphCommonsApiException
      */
-    final public function getNodes(array $query): GraphNodes
+    final public function getNodes(array $query)
     {
         $response = $this->graphCommons->client->get('/nodes/search', $query);
         if (!$response->ok()) {
@@ -386,7 +383,7 @@ final class GraphCommonsApi
      * @return string
      * @throws GraphCommons\Util\JsonException
      */
-    final private function serializeBody($body): string
+    final private function serializeBody($body)
     {
         // check body if lib's object
         if (is_object($body) && method_exists($body, 'serialize')) {
@@ -412,7 +409,7 @@ final class GraphCommonsApi
      * @param  array|object $g
      * @return GraphCommons\Graph\Graph
      */
-    final private function fillGraph(Graph $graph, $g): Graph
+    final private function fillGraph(Graph $graph, $g)
     {
         // force input being an object
         $g = Util::toObject($g);
@@ -448,7 +445,7 @@ final class GraphCommonsApi
      * @param  array|object $g
      * @return GraphCommons\Graph\Entity\GraphNode
      */
-    final public function fillNode(GraphNode $node, $n): GraphNode
+    final public function fillNode(GraphNode $node, $n)
     {
         // force input being an object
         $n = Util::toObject($n);
