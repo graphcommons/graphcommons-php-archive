@@ -38,9 +38,13 @@ use GraphCommons\Graph\Entity\License as GraphLicense;
 use GraphCommons\Graph\Entity\Layout as GraphLayout;
 use GraphCommons\Graph\Entity\User as GraphUser;
 use GraphCommons\Graph\Entity\Users as GraphUsers;
+use GraphCommons\Graph\Entity\Node as GraphNode;
 use GraphCommons\Graph\Entity\Nodes as GraphNodes;
+use GraphCommons\Graph\Entity\NodeType as GraphNodeType;
 use GraphCommons\Graph\Entity\NodeTypes as GraphNodeTypes;
 use GraphCommons\Graph\Entity\Edge as GraphEdge;
+use GraphCommons\Graph\Entity\Edges as GraphEdges;
+use GraphCommons\Graph\Entity\EdgeType as GraphEdgeType;
 use GraphCommons\Graph\Entity\EdgeTypes as GraphEdgeTypes;
 
 /**
