@@ -499,4 +499,31 @@ class Graph
     {
         return $this->signals;
     }
+
+    /**
+     * Create graph array overriding self.unserialize().
+     *
+     * @return array
+     */
+    final public function unserialize()
+    {
+        $array = array();
+        foreach (get_object_vars($this) as $key => $value) {
+            // pass private vars & null values
+            if ($key[0] == '_' || $value === null) {
+                continue;
+            }
+            // check if value has unserialize method
+            if (is_object($value) && method_exists($value, 'unserialize')) {
+                $value = $value->unserialize();
+                // @fix
+                if ($key == 'signals' && isset($value['signals'])) {
+                    $value = $value['signals'];
+                }
+            }
+            $array[$key] = $value;
+        }
+
+        return $array;
+    }
 }
