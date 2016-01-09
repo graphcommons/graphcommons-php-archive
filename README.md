@@ -58,7 +58,7 @@ $gc = new GraphCommons('<YOUR API KEY>', $config=[]);
 `GET https://graphcommons.com/api/v1/status`
 
 ```php
-dump $gc->api->status(): array
+dump $gc->api->status(); // array
 ```
 
 ##### Get a Graph
@@ -68,7 +68,7 @@ Notice: You can see each graph data as JSON requesting `https://graphcommons.com
 `GET https://graphscommons.com/api/v1/graphs/:id`
 
 ```php
-$graph = $gc->api->getGraph('<GRAPH ID>'): Graph
+$graph = $gc->api->getGraph('<GRAPH ID>'); // Graph
 
 dump $graph->id; // string
 dump $graph->image->path; // string
@@ -136,7 +136,7 @@ $graph = $gc->api->addGraphSignal(
 `GET https://graphcommons.com/api/v1/nodes/:id`
 
 ```php
-$graphNode = $gc->api->getNode('<NODE ID>'): GraphNode
+$graphNode = $gc->api->getNode('<NODE ID>'); // GraphNode
 ```
 
 ##### Get (search) Nodes
@@ -146,7 +146,7 @@ $graphNode = $gc->api->getNode('<NODE ID>'): GraphNode
 $graphNodes = $gc->api->getNodes(array(
     'query' => 'kerem',
     'limit' => 1,
-)): GraphNodes
+)); // GraphNodes
 ```
 
 ## Error Handling
