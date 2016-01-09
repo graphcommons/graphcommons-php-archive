@@ -65,19 +65,15 @@ trait SerialTrait
         $array = array();
 
         foreach (get_object_vars($this) as $key => $value) {
-            // pass private vars
-            if ($key[0] == '_') {
+            // pass private vars && null values
+            if ($key[0] == '_' && $value === null) {
                 continue;
             }
-            // pass null values
-            if ($value !== null) {
-                // check if value has unserialize method
-                if (is_object($value) && method_exists($value, 'unserialize')) {
-                    $array[$key] = $value->unserialize();
-                } else {
-                    $array[$key] = $value;
-                }
+            // check if value has unserialize method
+            if (is_object($value) && method_exists($value, 'unserialize')) {
+                $array[$key] = $value->unserialize();
             }
+            $array[$key] = $value;
         }
 
         return $array;
