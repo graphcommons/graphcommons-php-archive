@@ -2,12 +2,12 @@ Graph Commons is a collaborative 'network mapping' platform and a knowledge base
 
 See more about [here](//graphcommons.com/about).
 
-## GraphCommons (for PHP7)
+## GraphCommons
 
 Before beginning;
 
 - Set your autoloader properly or use [composer](//getcomposer.org)
-- Use PHP >= 5.4.0
+- Use PHP >= 5.4.0 (see for other PHP >= 7 support [here](//graphcommons-php7))
 - Handle each action in `try/catch` blocks
 - On README, `dump` means `var_dump`
 
@@ -70,10 +70,10 @@ Notice: You can see each graph data as JSON requesting `https://graphcommons.com
 ```php
 $graph = $gc->api->getGraph('<GRAPH ID>'): Graph
 
-dump $graph->id: string
-dump $graph->image->path: string
-dump $graph->license->type: string
-dump $graph->layout->springLength: int
+dump $graph->id; // string
+dump $graph->image->path; // string
+dump $graph->license->type; // string
+dump $graph->layout->springLength; // int
 
 // iteration over users, nodes, edges, nodeTypes, edgeTypes
 foreach ($graph->users as $user) {
@@ -85,29 +85,31 @@ foreach ($graph->users as $user) {
 `POST https://graphcommons.com/api/v1/graphs`
 
 ```php
-$graph = $gc->api->addGraph((function() {
-    $graph = new Graph();
-    $graph->setName('Person Graph');
-    $graph->setDescription('The Person Graph!');
-    $graph->setStatus(Graph::STATUS_DRAFT);
-    $graph->setSignals(SignalCollection::fromArray(array(
-        array(
-            'action'        => Signal::NODE_CREATE,
-            'parameters'    => array(
-                'name'      => 'Ahmet',
-                'type'      => 'Person')),
-        array(
-            'action'        => Signal::EDGE_CREATE,
-            'parameters'    => array(
-                'from_name' => 'Ahmet',
-                'from_type' => 'Person',
-                'to_name'   => 'Burak',
-                'to_type'   => 'Person',
-                'name'      => 'COLLABORATED',
-                'weight'    => 2)),
-    )));
-    return $graph;
-})()): Graph
+$graph = new Graph();
+$graph->setName('Person Graph');
+$graph->setDescription('The Person Graph!');
+$graph->setStatus(Graph::STATUS_DRAFT);
+$graph->setSignals(SignalCollection::fromArray(array(
+    array(
+        'action'        => Signal::NODE_CREATE,
+        'parameters'    => array(
+            'name'      => 'Ahmet',
+            'type'      => 'Person',
+        ),
+    ),
+    array(
+        'action'        => Signal::EDGE_CREATE,
+        'parameters'    => array(
+            'from_name' => 'Ahmet',
+            'from_type' => 'Person',
+            'to_name'   => 'Burak',
+            'to_type'   => 'Person',
+            'name'      => 'COLLABORATED',
+            'weight'    => 2,
+        ),
+    ),
+)));
+$graph = $gc->api->addGraph($graph);
 ```
 
 ##### Add a New Graph Signal
@@ -127,7 +129,7 @@ $graph = $gc->api->addGraphSignal(
                 'weight'    => 2,
             ),
         ),
-))): Graph
+)));
 ```
 
 ##### Get a Node
