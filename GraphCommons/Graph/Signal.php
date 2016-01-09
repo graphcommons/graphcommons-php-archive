@@ -96,7 +96,7 @@ final class Signal
      *
      * @param int|null $action
      */
-    final public function __construct($action)
+    final public function __construct($action = null)
     {
         if ($action) {
             $this->setAction($action);
