@@ -180,7 +180,7 @@ final class Signal
     }
 
     /**
-     * Create signal overriding self.unserialize().
+     * Create signal array overriding self.unserialize().
      *
      * @return array
      */
