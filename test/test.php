@@ -27,33 +27,31 @@ $gc = new GraphCommons(API_KEY, ['debug' => true]);
 // }
 
 // add graph
-// $graph = $gc->api->addGraph((function() {
-//     $graph = new Graph();
-//     $graph->setName('Person Graph');
-//     $graph->setDescription('The Person Graph!');
-//     $graph->setStatus(Graph::STATUS_DRAFT);
-//     $graph->setSignals(SignalCollection::fromArray(array(
-//         array(
-//             'action'        => Signal::NODE_CREATE,
-//             'parameters'    => array(
-//                 'name'      => 'Ahmet',
-//                 'type'      => 'Person',
-//             ),
+// $graph = new Graph();
+// $graph->setName('Person Graph');
+// $graph->setDescription('The Person Graph!');
+// $graph->setStatus(Graph::STATUS_DRAFT);
+// $graph->setSignals(SignalCollection::fromArray(array(
+//     array(
+//         'action'        => Signal::NODE_CREATE,
+//         'parameters'    => array(
+//             'name'      => 'Ahmet',
+//             'type'      => 'Person',
 //         ),
-//         array(
-//             'action'        => Signal::EDGE_CREATE,
-//             'parameters'    => array(
-//                 'from_name' => 'Ahmet',
-//                 'from_type' => 'Person',
-//                 'to_name'   => 'Burak',
-//                 'to_type'   => 'Person',
-//                 'name'      => 'COLLABORATED',
-//                 'weight'    => 2,
-//             ),
+//     ),
+//     array(
+//         'action'        => Signal::EDGE_CREATE,
+//         'parameters'    => array(
+//             'from_name' => 'Ahmet',
+//             'from_type' => 'Person',
+//             'to_name'   => 'Burak',
+//             'to_type'   => 'Person',
+//             'name'      => 'COLLABORATED',
+//             'weight'    => 2,
 //         ),
-//     )));
-//     return $graph;
-// })());
+//     ),
+// )));
+// $graph = $gc->api->addGraph($graph);
 
 // add graph signal
 // $data = $gc->api->addGraphSignal(
@@ -81,19 +79,19 @@ $gc = new GraphCommons(API_KEY, ['debug' => true]);
 // ));
 
 // error!
-try {
-    $gc->api->getGraph('nö!');
-} catch (\Throwable $e) {
-    // 404
-    print $e->getCode() ."\n";
-    // API error: code(404) message(Graph not found)
-    print $e->getMessage() ."\n";
+// try {
+//     $gc->api->getGraph('nö!');
+// } catch (\Exception $e) {
+//     // 404
+//     print $e->getCode() ."\n";
+//     // API error: code(404) message(Graph not found)
+//     print $e->getMessage() ."\n";
 
-    // print original response status
-    print $gc->client->response->getStatus() ."\n";
-    // print original response body
-    print $gc->client->response->getBody() ."\n";
-}
+//     // print original response status
+//     print $gc->client->response->getStatus() ."\n";
+//     // print original response body
+//     print $gc->client->response->getBody() ."\n";
+// }
 
 
 
