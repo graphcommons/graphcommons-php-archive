@@ -250,7 +250,7 @@ abstract class Stream
      */
     final public function getHeader(string $key)
     {
-        return $this->headers[$key] ?? null;
+        return isset($this->headers[$key]) ? $this->headers[$key] : null;
     }
 
     /**

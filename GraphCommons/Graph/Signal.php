@@ -96,9 +96,9 @@ final class Signal
      *
      * @param int|null $action
      */
-    final public function __construct(int $action = null)
+    final public function __construct($action)
     {
-        if ($action !== null) {
+        if ($action) {
             $this->setAction($action);
         }
     }
@@ -110,7 +110,7 @@ final class Signal
      * @return self
      * @throws \InvalidArgumentException
      */
-    final public function setAction(int $action): self
+    final public function setAction($action)
     {
         if (!isset(self::$actions[$action])) {
             throw new \InvalidArgumentException(sprintf(
@@ -130,7 +130,7 @@ final class Signal
      * @param  mixed  $value
      * @return self
      */
-    final public function setParameter(string $key, $value): self
+    final public function setParameter($key, $value)
     {
         $this->parameters[$key] = $value;
         return $this;
@@ -142,7 +142,7 @@ final class Signal
      * @param  array $parameters
      * @return self
      */
-    final public function setParameters(array $parameters): self
+    final public function setParameters(array $parameters)
     {
         $this->parameters = $parameters;
         return $this;
@@ -153,7 +153,7 @@ final class Signal
      *
      * @return string
      */
-    final public function getAction(): string
+    final public function getAction()
     {
         return (string) $this->action;
     }
@@ -166,7 +166,7 @@ final class Signal
      */
     final public function getParameter(string $key)
     {
-        return $this->parameters[$key] ?? null;
+        return isset($this->parameters[$key]) ? $this->parameters[$key] : null;
     }
 
     /**
@@ -174,7 +174,7 @@ final class Signal
      *
      * @return array
      */
-    final public function getParameters(): array
+    final public function getParameters()
     {
         return $this->parameters;
     }
@@ -184,7 +184,7 @@ final class Signal
      *
      * @return array
      */
-    final public function unserialize(): array
+    final public function unserialize()
     {
         $array = array();
         $array['action'] = $this->getAction();
@@ -201,7 +201,7 @@ final class Signal
      * @param  int|string $action
      * @return int
      */
-    final public static function detectAction($action): int
+    final public static function detectAction($action)
     {
         if (is_string($action)) {
             $actions = array_flip(self::$actions);

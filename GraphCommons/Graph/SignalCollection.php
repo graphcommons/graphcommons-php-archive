@@ -28,7 +28,8 @@ namespace GraphCommons\Graph;
 use GraphCommons\Util\Util;
 use GraphCommons\Util\Collection;
 use GraphCommons\Util\SerialTrait as Serial;
-use GraphCommons\Util\{Json, JsonException};
+use GraphCommons\Util\Json;
+use GraphCommons\Util\JsonException;
 
 /**
  * @package    GraphCommons
@@ -54,7 +55,7 @@ class SignalCollection extends Collection
      * @param string                    $id
      * @param GraphCommons\Graph\Signal $signal
      */
-    final public function add(Signal $signal): self
+    final public function add(Signal $signal)
     {
         parent::set($this->count(), $signal);
 
@@ -66,7 +67,7 @@ class SignalCollection extends Collection
      *
      * @return array
      */
-    final public function unserialize(): array
+    final public function unserialize()
     {
         $array = array();
         foreach ($this->data as $data) {
@@ -83,7 +84,7 @@ class SignalCollection extends Collection
      * @return GraphCommons\Graph\SignalCollection
      * @throws \InvalidArgumentException
      */
-    final public static function fromArray(array $array): SignalCollection
+    final public static function fromArray(array $array)
     {
         if (empty($array)) {
             throw new \InvalidArgumentException('Empty signals array given!');
@@ -112,7 +113,7 @@ class SignalCollection extends Collection
      * @return GraphCommons\Graph\SignalCollection
      * @throws GraphCommons\Util\JsonException, \InvalidArgumentException
      */
-    final public static function fromJson(string $json): SignalCollection
+    final public static function fromJson($json)
     {
         $json = new Json($json);
         if ($json->hasError()) {

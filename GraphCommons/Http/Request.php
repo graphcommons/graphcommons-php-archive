@@ -149,7 +149,7 @@ final class Request extends Stream
      */
     final public function getUriParam(string $key)
     {
-        return $this->uriParams[$key] ?? null;
+        return isset($this->uriParams[$key]) ? $this->uriParams[$key] : null;
     }
 
     /**

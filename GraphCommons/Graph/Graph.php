@@ -25,14 +25,17 @@
  */
 namespace GraphCommons\Graph;
 
-use GraphCommons\Util\{PropertyTrait as Property, SerialTrait as Serial};
+use GraphCommons\Util\PropertyTrait as Property;
+use GraphCommons\Util\SerialTrait as Serial;
 use GraphCommons\Graph\SignalCollection as Signals;
 use GraphCommons\Graph\Entity\Image;
 use GraphCommons\Graph\Entity\License;
 use GraphCommons\Graph\Entity\Layout;
 use GraphCommons\Graph\Entity\Users;
-use GraphCommons\Graph\Entity\{Nodes, NodeTypes};
-use GraphCommons\Graph\Entity\{Edges, EdgeTypes};
+use GraphCommons\Graph\Entity\Nodes;
+use GraphCommons\Graph\Entity\NodeTypes;
+use GraphCommons\Graph\Entity\Edges;
+use GraphCommons\Graph\Entity\EdgeTypes;
 
 /**
  * @package    GraphCommons
@@ -151,7 +154,7 @@ class Graph
      * @param  string $id
      * @return self
      */
-    final public function setId(string $id): self
+    final public function setId($id)
     {
         $this->id = $id;
         return $this;
@@ -163,7 +166,7 @@ class Graph
      * @param  string $name
      * @return self
      */
-    final public function setName(string $name = null): self
+    final public function setName($name)
     {
         $this->name = (string) $name;
         return $this;
@@ -175,7 +178,7 @@ class Graph
      * @param  string $subtitle
      * @return self
      */
-    final public function setSubtitle(string $subtitle = null): self
+    final public function setSubtitle($subtitle)
     {
         $this->subtitle = (string) $subtitle;
         return $this;
@@ -187,7 +190,7 @@ class Graph
      * @param  string $description
      * @return self
      */
-    final public function setDescription(string $description = null): self
+    final public function setDescription($description)
     {
         $this->description = (string) $description;
         return $this;
@@ -199,7 +202,7 @@ class Graph
      * @param  string $createdAt
      * @return self
      */
-    final public function setCreatedAt(string $createdAt = null): self
+    final public function setCreatedAt($createdAt)
     {
         $this->createdAt = (string) $createdAt;
         return $this;
@@ -211,7 +214,7 @@ class Graph
      * @param  string $update
      * @return self
      */
-    final public function setUpdatedAt(string $updatedAt = null): self
+    final public function setUpdatedAt($updatedAt)
     {
         $this->updatedAt = (string) $updatedAt;
         return $this;
@@ -223,7 +226,7 @@ class Graph
      * @param  int $status
      * @return self
      */
-    final public function setStatus(int $status = null): self
+    final public function setStatus($status)
     {
         $this->status = (int) $status;
         return $this;
@@ -235,7 +238,7 @@ class Graph
      * @param  GraphCommons\Graph\Entity\Image $image
      * @return self
      */
-    final public function setImage(Image $image): self
+    final public function setImage(Image $image)
     {
         $this->image = $image;
         return $this;
@@ -247,7 +250,7 @@ class Graph
      * @param  GraphCommons\Graph\Entity\License $license
      * @return self
      */
-    final public function setLicense(License $license): self
+    final public function setLicense(License $license)
     {
         $this->license = $license;
         return $this;
@@ -259,7 +262,7 @@ class Graph
      * @param  GraphCommons\Graph\Entity\Layout $layout
      * @return self
      */
-    final public function setLayout(Layout $layout): self
+    final public function setLayout(Layout $layout)
     {
         $this->layout = $layout;
         return $this;
@@ -271,7 +274,7 @@ class Graph
      * @param  GraphCommons\Graph\Entity\Users $users
      * @return self
      */
-    final public function setUsers(Users $users): self
+    final public function setUsers(Users $users)
     {
         $this->users = $users;
         return $this;
@@ -283,7 +286,7 @@ class Graph
      * @param  GraphCommons\Graph\Entity\Nodes $nodes
      * @return self
      */
-    final public function setNodes(Nodes $nodes): self
+    final public function setNodes(Nodes $nodes)
     {
         $this->nodes = $nodes;
         return $this;
@@ -295,7 +298,7 @@ class Graph
      * @param  GraphCommons\Graph\Entity\NodeTypes $nodeTypes
      * @return self
      */
-    final public function setNodeTypes(NodeTypes $nodeTypes): self
+    final public function setNodeTypes(NodeTypes $nodeTypes)
     {
         $this->nodeTypes = $nodeTypes;
         return $this;
@@ -307,7 +310,7 @@ class Graph
      * @param  GraphCommons\Graph\Entity\Edges $edges
      * @return self
      */
-    final public function setEdges(Edges $edges): self
+    final public function setEdges(Edges $edges)
     {
         $this->edges = $edges;
         return $this;
@@ -319,7 +322,7 @@ class Graph
      * @param  GraphCommons\Graph\Entity\EdgeTypes $edgeTypes
      * @return self
      */
-    final public function setEdgeTypes(EdgeTypes $edgeTypes): self
+    final public function setEdgeTypes(EdgeTypes $edgeTypes)
     {
         $this->edgeTypes = $edgeTypes;
         return $this;
@@ -331,7 +334,7 @@ class Graph
      * @param  GraphCommons\Graph\SignalCollection $signals
      * @return self
      */
-    final public function setSignals(Signals $signals): self
+    final public function setSignals(Signals $signals)
     {
         $this->signals = $signals;
         return $this;
@@ -342,7 +345,7 @@ class Graph
      *
      * @return string
      */
-    final public function getId(): string
+    final public function getId()
     {
         return $this->id;
     }
@@ -352,7 +355,7 @@ class Graph
      *
      * @return string
      */
-    final public function getName(): string
+    final public function getName()
     {
         return $this->name;
     }
@@ -362,7 +365,7 @@ class Graph
      *
      * @return string
      */
-    final public function getSubtitle(): string
+    final public function getSubtitle()
     {
         return $this->subtitle;
     }
@@ -372,7 +375,7 @@ class Graph
      *
      * @return string
      */
-    final public function getDescription(): string
+    final public function getDescription()
     {
         return $this->description;
     }
@@ -382,7 +385,7 @@ class Graph
      *
      * @return string
      */
-    final public function getCreatedAt(): string
+    final public function getCreatedAt()
     {
         return $this->createdAt;
     }
@@ -392,7 +395,7 @@ class Graph
      *
      * @return string
      */
-    final public function getUpdatedAt(): string
+    final public function getUpdatedAt()
     {
         return $this->updatedAt;
     }
@@ -402,7 +405,7 @@ class Graph
      *
      * @return int
      */
-    final public function getStatus(): int
+    final public function getStatus()
     {
         return $this->status;
     }
@@ -412,7 +415,7 @@ class Graph
      *
      * @return GraphCommons\Graph\Entity\Image
      */
-    final public function getImage(): Image
+    final public function getImage()
     {
         return $this->image;
     }
@@ -422,7 +425,7 @@ class Graph
      *
      * @return GraphCommons\Graph\Entity\License
      */
-    final public function getLicense(): License
+    final public function getLicense()
     {
         return $this->license;
     }
@@ -432,7 +435,7 @@ class Graph
      *
      * @return GraphCommons\Graph\Entity\Layout
      */
-    final public function getLayout(): Layout
+    final public function getLayout()
     {
         return $this->layout;
     }
@@ -442,7 +445,7 @@ class Graph
      *
      * @return GraphCommons\Graph\Entity\Users
      */
-    final public function getUsers(): Users
+    final public function getUsers()
     {
         return $this->users;
     }
@@ -452,7 +455,7 @@ class Graph
      *
      * @return GraphCommons\Graph\Entity\Nodes
      */
-    final public function getNodes(): Nodes
+    final public function getNodes()
     {
         return $this->nodes;
     }
@@ -462,7 +465,7 @@ class Graph
      *
      * @return GraphCommons\Graph\Entity\NodeTypes
      */
-    final public function getNodeTypes(): NodeTypes
+    final public function getNodeTypes()
     {
         return $this->nodeTypes;
     }
@@ -472,7 +475,7 @@ class Graph
      *
      * @return GraphCommons\Graph\Entity\EdgeTypes
      */
-    final public function getEdges(): Edges
+    final public function getEdges()
     {
         return $this->edges;
     }
@@ -482,7 +485,7 @@ class Graph
      *
      * @return GraphCommons\Graph\Entity\EdgeTypes
      */
-    final public function getEdgeTypes(): EdgeTypes
+    final public function getEdgeTypes()
     {
         return $this->edgeTypes;
     }
@@ -492,7 +495,7 @@ class Graph
      *
      * @return GraphCommons\Graph\SignalCollection
      */
-    final public function getSignals(): Signals
+    final public function getSignals()
     {
         return $this->signals;
     }

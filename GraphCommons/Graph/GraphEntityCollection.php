@@ -42,7 +42,7 @@ class GraphEntityCollection extends Collection
      * @param string                         $id
      * @param GraphCommons\Graph\GraphEntity $graphEntity
      */
-    final public function add(string $id, GraphEntity $graphEntity): self
+    final public function add($id, GraphEntity $graphEntity)
     {
         parent::set($id, $graphEntity);
 

@@ -63,7 +63,7 @@ abstract class GraphEntity
      * @param  GraphCommons\Graph\Graph $graph
      * @return self
      */
-    final public function setGraph(Graph $graph): self
+    final public function setGraph(Graph $graph)
     {
         $this->graph = $graph;
         return $this;
@@ -74,7 +74,7 @@ abstract class GraphEntity
      *
      * @return GraphCommons\Graph\Graph
      */
-    final public function getGraph(): Graph
+    final public function getGraph()
     {
         return $this->graph;
     }
