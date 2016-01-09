@@ -25,8 +25,6 @@
  */
 namespace GraphCommons\Http\Exception;
 
-use GraphCommons\Http\Exception\Exception;
-
 /**
  * @package    GraphCommons
  * @subpackage GraphCommons\Http\Exception
