@@ -89,7 +89,7 @@ final class GraphCommons
      * @param string $apiKey
      * @param array  $config
      */
-    final public function __construct(string $apiKey, array $config = [])
+    final public function __construct($apiKey, array $config = [])
     {
         $this->api = new GraphCommonsApi($this);
 

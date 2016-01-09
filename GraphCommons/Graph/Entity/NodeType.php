@@ -108,7 +108,7 @@ final class NodeType extends GraphEntity
      * @param  string $id
      * @return self
      */
-    final public function setId(string $id): self
+    final public function setId($id)
     {
         $this->id = $id;
         return $this;
@@ -120,7 +120,7 @@ final class NodeType extends GraphEntity
      * @param  string $name
      * @return self
      */
-    final public function setName(string $name = null): self
+    final public function setName($name)
     {
         $this->name = (string) $name;
         return $this;
@@ -132,7 +132,7 @@ final class NodeType extends GraphEntity
      * @param  string $nameAlias
      * @return self
      */
-    final public function setNameAlias(string $nameAlias = null): self
+    final public function setNameAlias($nameAlias)
     {
         $this->nameAlias = (string) $nameAlias;
         return $this;
@@ -144,7 +144,7 @@ final class NodeType extends GraphEntity
      * @param  string $description
      * @return self
      */
-    final public function setDescription(string $description = null): self
+    final public function setDescription($description)
     {
         $this->description = (string) $description;
         return $this;
@@ -156,7 +156,7 @@ final class NodeType extends GraphEntity
      * @param  string $image
      * @return self
      */
-    final public function setImage(string $image = null): self
+    final public function setImage($image)
     {
         $this->image = (string) $image;
         return $this;
@@ -168,7 +168,7 @@ final class NodeType extends GraphEntity
      * @param  bool $imageAsIcon
      * @return self
      */
-    final public function setImageAsIcon(bool $imageAsIcon = null): self
+    final public function setImageAsIcon($imageAsIcon)
     {
         $this->imageAsIcon = (bool) $imageAsIcon;
         return $this;
@@ -180,7 +180,7 @@ final class NodeType extends GraphEntity
      * @param  string $color
      * @return self
      */
-    final public function setColor(string $color = null): self
+    final public function setColor($color)
     {
         $this->color = (string) $color;
         return $this;
@@ -192,7 +192,7 @@ final class NodeType extends GraphEntity
      * @param  \stdClass $properties
      * @return self
      */
-    final public function setProperties(\stdClass $properties = null): self
+    final public function setProperties($properties)
     {
         $this->properties = (object) $properties;
         return $this;
@@ -204,7 +204,7 @@ final class NodeType extends GraphEntity
      * @param  bool $hideName
      * @return self
      */
-    final public function setHideName(bool $hideName = null): self
+    final public function setHideName($hideName)
     {
         $this->hideName = (bool) $hideName;
         return $this;
@@ -216,7 +216,7 @@ final class NodeType extends GraphEntity
      * @param  string $size
      * @return self
      */
-    final public function setSize(string $size = null): self
+    final public function setSize($size)
     {
         $this->size = (string) $size;
         return $this;
@@ -228,7 +228,7 @@ final class NodeType extends GraphEntity
      * @param  string $sizeLimit
      * @return self
      */
-    final public function setSizeLimit(int $sizeLimit = null): self
+    final public function setSizeLimit($sizeLimit)
     {
         $this->sizeLimit = (int) $sizeLimit;
         return $this;
@@ -239,7 +239,7 @@ final class NodeType extends GraphEntity
      *
      * @return string
      */
-    final public function getId(): string
+    final public function getId()
     {
         return $this->id;
     }
@@ -249,7 +249,7 @@ final class NodeType extends GraphEntity
      *
      * @return string
      */
-    final public function getName(): string
+    final public function getName()
     {
         return $this->name;
     }
@@ -259,7 +259,7 @@ final class NodeType extends GraphEntity
      *
      * @return string
      */
-    final public function getNameAlias(): string
+    final public function getNameAlias()
     {
         return $this->nameAlias;
     }
@@ -269,7 +269,7 @@ final class NodeType extends GraphEntity
      *
      * @return string
      */
-    final public function getDescription(): string
+    final public function getDescription()
     {
         return $this->description;
     }
@@ -279,7 +279,7 @@ final class NodeType extends GraphEntity
      *
      * @return string
      */
-    final public function getImage(): string
+    final public function getImage()
     {
         return $this->image;
     }
@@ -289,7 +289,7 @@ final class NodeType extends GraphEntity
      *
      * @return bool
      */
-    final public function getImageAsIcon(): bool
+    final public function getImageAsIcon()
     {
         return $this->imageAsIcon;
     }
@@ -299,7 +299,7 @@ final class NodeType extends GraphEntity
      *
      * @return string
      */
-    final public function getColor(): string
+    final public function getColor()
     {
         return $this->color;
     }
@@ -309,7 +309,7 @@ final class NodeType extends GraphEntity
      *
      * @return \stdClass
      */
-    final public function getProperties(): \stdClass
+    final public function getProperties()
     {
         return $this->properties;
     }
@@ -319,7 +319,7 @@ final class NodeType extends GraphEntity
      *
      * @return bool
      */
-    final public function getHideName(): bool
+    final public function getHideName()
     {
         return $this->hideName;
     }
@@ -329,7 +329,7 @@ final class NodeType extends GraphEntity
      *
      * @return string
      */
-    final public function getSize(): string
+    final public function getSize()
     {
         return $this->size;
     }
@@ -339,7 +339,7 @@ final class NodeType extends GraphEntity
      *
      * @return int
      */
-    final public function getSizeLimit(): int
+    final public function getSizeLimit()
     {
         return $this->sizeLimit;
     }

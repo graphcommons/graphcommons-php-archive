@@ -120,7 +120,7 @@ final class Edge extends GraphEntity
      * @param  string $id
      * @return self
      */
-    final public function setId(string $id): self
+    final public function setId($id)
     {
         $this->id = $id;
         return $this;
@@ -132,7 +132,7 @@ final class Edge extends GraphEntity
      * @param  string $name
      * @return self
      */
-    final public function setName(string $name = null): self
+    final public function setName($name)
     {
         $this->name = (string) $name;
         return $this;
@@ -144,7 +144,7 @@ final class Edge extends GraphEntity
      * @param  GraphCommons\Graph\Entity\EdgeType $type
      * @return self
      */
-    final public function setType(EdgeType $type = null): self
+    final public function setType(EdgeType $type)
     {
         $this->type = $type;
         return $this;
@@ -156,7 +156,7 @@ final class Edge extends GraphEntity
      * @param  string $type
      * @return self
      */
-    final public function setTypeId(string $typeId = null): self
+    final public function setTypeId($typeId)
     {
         $this->typeId = (string) $typeId;
         return $this;
@@ -168,7 +168,7 @@ final class Edge extends GraphEntity
      * @param  GraphCommons\Graph\Entity\User $user
      * @return self
      */
-    final public function setUser(User $user): self
+    final public function setUser(User $user)
     {
         $this->user = $user;
         return $this;
@@ -180,7 +180,7 @@ final class Edge extends GraphEntity
      * @param  string $userId
      * @return self
      */
-    final public function setUserId(string $userId = null): self
+    final public function setUserId($userId)
     {
         $this->userId = (string) $userId;
         return $this;
@@ -192,7 +192,7 @@ final class Edge extends GraphEntity
      * @param  string $from
      * @return self
      */
-    final public function setFrom(string $from = null): self
+    final public function setFrom($from)
     {
         $this->from = (string) $from;
         return $this;
@@ -203,7 +203,7 @@ final class Edge extends GraphEntity
      * @param  GraphCommons\Graph\Entity\Node $fromNode
      * @return self
      */
-    final public function setFromNode(Node $fromNode): self
+    final public function setFromNode(Node $fromNode)
     {
         $this->fromNode = $fromNode;
         return $this;
@@ -215,7 +215,7 @@ final class Edge extends GraphEntity
      * @param  string $to
      * @return self
      */
-    final public function setTo(string $to = null): self
+    final public function setTo($to)
     {
         $this->to = (string) $to;
         return $this;
@@ -226,7 +226,7 @@ final class Edge extends GraphEntity
      * @param  GraphCommons\Graph\Entity\Node $toNode
      * @return self
      */
-    final public function setToNode(Node $toNode): self
+    final public function setToNode(Node $toNode)
     {
         $this->toNode = $toNode;
         return $this;
@@ -238,7 +238,7 @@ final class Edge extends GraphEntity
      * @param  int $weight
      * @return self
      */
-    final public function setWeight(int $weight = null): self
+    final public function setWeight($weight)
     {
         $this->weight = (int) $weight;
         return $this;
@@ -250,7 +250,7 @@ final class Edge extends GraphEntity
      * @param  int $directed
      * @return self
      */
-    final public function setDirected(int $directed = null): self
+    final public function setDirected($directed)
     {
         $this->directed = (int) $directed;
         return $this;
@@ -262,7 +262,7 @@ final class Edge extends GraphEntity
      * @param  \stdClass $properties
      * @return self
      */
-    final public function setProperties(\stdClass $properties = null): self
+    final public function setProperties($properties)
     {
         $this->properties = (object) $properties;
         return $this;
@@ -273,7 +273,7 @@ final class Edge extends GraphEntity
      *
      * @return string
      */
-    final public function getId(): string
+    final public function getId()
     {
         return $this->id;
     }
@@ -283,7 +283,7 @@ final class Edge extends GraphEntity
      *
      * @return string
      */
-    final public function getName(): string
+    final public function getName()
     {
         return $this->name;
     }
@@ -293,7 +293,7 @@ final class Edge extends GraphEntity
      *
      * @return GraphCommons\Graph\Entity\EdgeType
      */
-    final public function getType(): EdgeType
+    final public function getType()
     {
         return $this->type;
     }
@@ -303,7 +303,7 @@ final class Edge extends GraphEntity
      *
      * @return string
      */
-    final public function getTypeId(): string
+    final public function getTypeId()
     {
         return $this->typeId;
     }
@@ -313,7 +313,7 @@ final class Edge extends GraphEntity
      *
      * @return GraphCommons\Graph\Entity\User
      */
-    final public function getUser(): User
+    final public function getUser()
     {
         return $this->user;
     }
@@ -323,7 +323,7 @@ final class Edge extends GraphEntity
      *
      * @return string
      */
-    final public function getUserId(): string
+    final public function getUserId()
     {
         return $this->userId;
     }
@@ -333,7 +333,7 @@ final class Edge extends GraphEntity
      *
      * @return string
      */
-    final public function getFrom(): string
+    final public function getFrom()
     {
         return $this->from;
     }
@@ -343,7 +343,7 @@ final class Edge extends GraphEntity
      *
      * @return GraphCommons\Graph\Entity\Node
      */
-    final public function getFromNode(): Node
+    final public function getFromNode()
     {
         return $this->fromNode;
     }
@@ -353,7 +353,7 @@ final class Edge extends GraphEntity
      *
      * @return string
      */
-    final public function getTo(): string
+    final public function getTo()
     {
         return $this->to;
     }
@@ -363,7 +363,7 @@ final class Edge extends GraphEntity
      *
      * @return GraphCommons\Graph\Entity\Node
      */
-    final public function getToNode(): Node
+    final public function getToNode()
     {
         return $this->toNode;
     }
@@ -373,7 +373,7 @@ final class Edge extends GraphEntity
      *
      * @return int
      */
-    final public function getWeight(): int
+    final public function getWeight()
     {
         return $this->weight;
     }
@@ -383,7 +383,7 @@ final class Edge extends GraphEntity
      *
      * @return int
      */
-    final public function getDirected(): int
+    final public function getDirected()
     {
         return $this->directed;
     }
@@ -393,7 +393,7 @@ final class Edge extends GraphEntity
      *
      * @return \stdClass
      */
-    final public function getProperties(): \stdClass
+    final public function getProperties()
     {
         return $this->properties;
     }

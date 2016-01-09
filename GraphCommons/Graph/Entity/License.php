@@ -72,7 +72,7 @@ final class License extends GraphEntity
      * @param  string $type
      * @return self
      */
-    final public function setType(string $type = null): self
+    final public function setType($type)
     {
         $this->type = (string) $type;
         return $this;
@@ -84,7 +84,7 @@ final class License extends GraphEntity
      * @param  bool $ccBy
      * @return self
      */
-    final public function setCcBy(bool $ccBy = null): self
+    final public function setCcBy($ccBy)
     {
         $this->ccBy = (bool) $ccBy;
         return $this;
@@ -96,7 +96,7 @@ final class License extends GraphEntity
      * @param  bool $ccSa
      * @return self
      */
-    final public function setCcSa(bool $ccSa = null): self
+    final public function setCcSa($ccSa)
     {
         $this->ccSa = (bool) $ccSa;
         return $this;
@@ -108,7 +108,7 @@ final class License extends GraphEntity
      * @param  bool $ccNd
      * @return self
      */
-    final public function setCcNd(bool $ccNd = null): self
+    final public function setCcNd($ccNd)
     {
         $this->ccNd = (bool) $ccNd;
         return $this;
@@ -120,7 +120,7 @@ final class License extends GraphEntity
      * @param  bool $ccNc
      * @return self
      */
-    final public function setCcNc(bool $ccNc = null): self
+    final public function setCcNc($ccNc)
     {
         $this->ccNc = (bool) $ccNc;
         return $this;
@@ -131,7 +131,7 @@ final class License extends GraphEntity
      *
      * @return string
      */
-    final public function getType(): string
+    final public function getType()
     {
         return $this->type;
     }
@@ -141,7 +141,7 @@ final class License extends GraphEntity
      *
      * @return bool
      */
-    final public function getCcBy(): bool
+    final public function getCcBy()
     {
         return $this->ccBy;
     }
@@ -151,7 +151,7 @@ final class License extends GraphEntity
      *
      * @return bool
      */
-    final public function getCcSa(): bool
+    final public function getCcSa()
     {
         return $this->ccSa;
     }
@@ -161,7 +161,7 @@ final class License extends GraphEntity
      *
      * @return bool
      */
-    final public function getCcNd(): bool
+    final public function getCcNd()
     {
         return $this->ccNd;
     }
@@ -171,7 +171,7 @@ final class License extends GraphEntity
      *
      * @return bool
      */
-    final public function getCcNc(): bool
+    final public function getCcNc()
     {
         return $this->ccNc;
     }

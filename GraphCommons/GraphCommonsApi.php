@@ -100,7 +100,7 @@ final class GraphCommonsApi
      * @return GraphCommons\Graph\Graph
      * @throws GraphCommons\GraphCommonsApiException
      */
-    final public function getGraph(string $id)
+    final public function getGraph($id)
     {
         $response = $this->graphCommons->client->get('/graphs/'. $id);
         if (!$response->ok()) {
@@ -314,7 +314,7 @@ final class GraphCommonsApi
      * @return GraphCommons\Graph\Graph
      * @throws GraphCommons\GraphCommonsApiException
      */
-    final public function addGraphSignal(string $id, SignalCollection $body)
+    final public function addGraphSignal($id, SignalCollection $body)
     {
         $body = $this->serializeBody($body);
 
@@ -336,7 +336,7 @@ final class GraphCommonsApi
      * @return GraphCommons\Graph\Entity\Node
      * @throws GraphCommons\GraphCommonsApiException
      */
-    final public function getNode(string $id)
+    final public function getNode($id)
     {
         $response = $this->graphCommons->client->get('/nodes/'. $id);
         if (!$response->ok()) {

@@ -90,7 +90,7 @@ final class User extends GraphEntity
      * @param  string $id
      * @return self
      */
-    final public function setId(string $id): self
+    final public function setId($id)
     {
         $this->id = $id;
         return $this;
@@ -102,7 +102,7 @@ final class User extends GraphEntity
      * @param  string $username
      * @return self
      */
-    final public function setUsername(string $username = null): self
+    final public function setUsername($username)
     {
         $this->username = (string) $username;
         return $this;
@@ -114,7 +114,7 @@ final class User extends GraphEntity
      * @param  string $fullName
      * @return self
      */
-    final public function setFullName(string $fullName = null): self
+    final public function setFullName($fullName)
     {
         $this->fullName = (string) $fullName;
         return $this;
@@ -126,7 +126,7 @@ final class User extends GraphEntity
      * @param  string $firstName
      * @return self
      */
-    final public function setFirstName(string $firstName = null): self
+    final public function setFirstName($firstName)
     {
         $this->firstName = (string) $firstName;
         return $this;
@@ -138,7 +138,7 @@ final class User extends GraphEntity
      * @param  string $lastName
      * @return self
      */
-    final public function setLastName(string $lastName = null): self
+    final public function setLastName($lastName)
     {
         $this->lastName = (string) $lastName;
         return $this;
@@ -150,7 +150,7 @@ final class User extends GraphEntity
      * @param  bool $isOwner
      * @return self
      */
-    final public function setIsOwner(bool $isOwner = null): self
+    final public function setIsOwner($isOwner)
     {
         $this->isOwner = (bool) $isOwner;
         return $this;
@@ -162,7 +162,7 @@ final class User extends GraphEntity
      * @param  bool $isAdmin
      * @return self
      */
-    final public function setIsAdmin(bool $isAdmin = null): self
+    final public function setIsAdmin($isAdmin)
     {
         $this->isAdmin = (bool) $isAdmin;
         return $this;
@@ -174,7 +174,7 @@ final class User extends GraphEntity
      * @param  string $imgPath
      * @return self
      */
-    final public function setImgPath(string $imgPath = null): self
+    final public function setImgPath($imgPath)
     {
         $this->imgPath = (string) $imgPath;
         return $this;
@@ -185,7 +185,7 @@ final class User extends GraphEntity
      *
      * @return string
      */
-    final public function getId(): string
+    final public function getId()
     {
         return $this->id;
     }
@@ -195,7 +195,7 @@ final class User extends GraphEntity
      *
      * @return string
      */
-    final public function getUsername(): string
+    final public function getUsername()
     {
         return $this->username;
     }
@@ -205,7 +205,7 @@ final class User extends GraphEntity
      *
      * @return string
      */
-    final public function getFullName(): string
+    final public function getFullName()
     {
         return $this->fullName;
     }
@@ -215,7 +215,7 @@ final class User extends GraphEntity
      *
      * @return string
      */
-    final public function getFirstName(): string
+    final public function getFirstName()
     {
         return $this->firstName;
     }
@@ -225,7 +225,7 @@ final class User extends GraphEntity
      *
      * @return string
      */
-    final public function getLastName(): string
+    final public function getLastName()
     {
         return $this->lastName;
     }
@@ -235,7 +235,7 @@ final class User extends GraphEntity
      *
      * @return bool
      */
-    final public function getIsOwner(): bool
+    final public function getIsOwner()
     {
         return $this->isOwner;
     }
@@ -245,7 +245,7 @@ final class User extends GraphEntity
      *
      * @return bool
      */
-    final public function getIsAdmin(): bool
+    final public function getIsAdmin()
     {
         return $this->isAdmin;
     }
@@ -255,7 +255,7 @@ final class User extends GraphEntity
      *
      * @return string
      */
-    final public function getImgPath(): string
+    final public function getImgPath()
     {
         return $this->imgPath;
     }

@@ -59,7 +59,7 @@ final class Image extends GraphEntity
      *
      * @param string $path
      */
-    final public function setPath(string $path = null): self
+    final public function setPath($path)
     {
         $this->path = (string) $path;
         return $this;
@@ -70,7 +70,7 @@ final class Image extends GraphEntity
      *
      * @param string $refName
      */
-    final public function setRefName(string $refName = null): self
+    final public function setRefName($refName)
     {
         $this->refName = (string) $refName;
         return $this;
@@ -81,7 +81,7 @@ final class Image extends GraphEntity
      *
      * @param string $refUrl
      */
-    final public function setRefUrl(string $refUrl = null): self
+    final public function setRefUrl($refUrl)
     {
         $this->refUrl = (string) $refUrl;
         return $this;
@@ -92,7 +92,7 @@ final class Image extends GraphEntity
      *
      * @return string
      */
-    final public function getPath(): string
+    final public function getPath()
     {
         return $this->path;
     }
@@ -102,7 +102,7 @@ final class Image extends GraphEntity
      *
      * @return string
      */
-    final public function getRefName(): string
+    final public function getRefName()
     {
         return $this->refName;
     }
@@ -112,7 +112,7 @@ final class Image extends GraphEntity
      *
      * @return string
      */
-    final public function getRefUrl(): string
+    final public function getRefUrl()
     {
         return $this->refUrl;
     }

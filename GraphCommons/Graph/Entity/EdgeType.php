@@ -96,7 +96,7 @@ final class EdgeType extends GraphEntity
      * @param  string $id
      * @return self
      */
-    final public function setId(string $id): self
+    final public function setId($id)
     {
         $this->id = $id;
         return $this;
@@ -108,7 +108,7 @@ final class EdgeType extends GraphEntity
      * @param  string $name
      * @return self
      */
-    final public function setName(string $name = null): self
+    final public function setName($name)
     {
         $this->name = (string) $name;
         return $this;
@@ -120,7 +120,7 @@ final class EdgeType extends GraphEntity
      * @param  string $nameAlias
      * @return self
      */
-    final public function setNameAlias(string $nameAlias = null): self
+    final public function setNameAlias($nameAlias)
     {
         $this->nameAlias = (string) $nameAlias;
         return $this;
@@ -132,7 +132,7 @@ final class EdgeType extends GraphEntity
      * @param  string $description
      * @return self
      */
-    final public function setDescription(string $description = null): self
+    final public function setDescription($description)
     {
         $this->description = (string) $description;
         return $this;
@@ -144,7 +144,7 @@ final class EdgeType extends GraphEntity
      * @param  int $weighted
      * @return self
      */
-    final public function setWeighted(int $weighted = null): self
+    final public function setWeighted($weighted)
     {
         $this->weighted = (int) $weighted;
         return $this;
@@ -156,7 +156,7 @@ final class EdgeType extends GraphEntity
      * @param  int $directed
      * @return self
      */
-    final public function setDirected(int $directed = null): self
+    final public function setDirected($directed)
     {
         $this->directed = (int) $directed;
         return $this;
@@ -168,7 +168,7 @@ final class EdgeType extends GraphEntity
      * @param  bool $durational
      * @return self
      */
-    final public function setDurational(bool $durational = null): self
+    final public function setDurational($durational)
     {
         $this->durational = (bool) $durational;
         return $this;
@@ -180,7 +180,7 @@ final class EdgeType extends GraphEntity
      * @param  string $color
      * @return self
      */
-    final public function setColor(string $color = null): self
+    final public function setColor($color)
     {
         $this->color = (string) $color;
         return $this;
@@ -192,7 +192,7 @@ final class EdgeType extends GraphEntity
      * @param  \stdClass $properties
      * @return self
      */
-    final public function setProperties(\stdClass $properties = null): self
+    final public function setProperties($properties)
     {
         $this->properties = (object) $properties;
         return $this;
@@ -203,7 +203,7 @@ final class EdgeType extends GraphEntity
      *
      * @return string
      */
-    final public function getId(): string
+    final public function getId()
     {
         return $this->id;
     }
@@ -213,7 +213,7 @@ final class EdgeType extends GraphEntity
      *
      * @return string
      */
-    final public function getName(): string
+    final public function getName()
     {
         return $this->name;
     }
@@ -223,7 +223,7 @@ final class EdgeType extends GraphEntity
      *
      * @return string
      */
-    final public function getNameAlias(): string
+    final public function getNameAlias()
     {
         return $this->nameAlias;
     }
@@ -233,7 +233,7 @@ final class EdgeType extends GraphEntity
      *
      * @return string
      */
-    final public function getDescription(): string
+    final public function getDescription()
     {
         return $this->description;
     }
@@ -243,7 +243,7 @@ final class EdgeType extends GraphEntity
      *
      * @return int
      */
-    final public function getWeighted(): int
+    final public function getWeighted()
     {
         return $this->weighted;
     }
@@ -253,7 +253,7 @@ final class EdgeType extends GraphEntity
      *
      * @return int
      */
-    final public function getDirected(): int
+    final public function getDirected()
     {
         return $this->directed;
     }
@@ -263,7 +263,7 @@ final class EdgeType extends GraphEntity
      *
      * @return bool
      */
-    final public function getDurational(): bool
+    final public function getDurational()
     {
         return $this->durational;
     }
@@ -273,7 +273,7 @@ final class EdgeType extends GraphEntity
      *
      * @return string
      */
-    final public function getColor(): string
+    final public function getColor()
     {
         return $this->color;
     }
@@ -283,7 +283,7 @@ final class EdgeType extends GraphEntity
      *
      * @return \stdClass
      */
-    final public function getProperties(): \stdClass
+    final public function getProperties()
     {
         return $this->properties;
     }

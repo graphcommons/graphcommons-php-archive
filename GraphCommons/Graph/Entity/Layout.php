@@ -84,7 +84,7 @@ final class Layout extends GraphEntity
      * @param  float $gravity
      * @return self
      */
-    final public function setGravity(float $gravity = null): self
+    final public function setGravity($gravity)
     {
         $this->gravity = (float) $gravity;
         return $this;
@@ -96,7 +96,7 @@ final class Layout extends GraphEntity
      * @param  float $dragCoeff
      * @return self
      */
-    final public function setDragCoeff(float $dragCoeff = null): self
+    final public function setDragCoeff($dragCoeff)
     {
         $this->dragCoeff = (float) $dragCoeff;
         return $this;
@@ -108,7 +108,7 @@ final class Layout extends GraphEntity
      * @param  float $springCoeff
      * @return self
      */
-    final public function setSpringCoeff(float $springCoeff = null): self
+    final public function setSpringCoeff($springCoeff)
     {
         $this->springCoeff = (float) $springCoeff;
         return $this;
@@ -120,7 +120,7 @@ final class Layout extends GraphEntity
      * @param  int $springLength
      * @return self
      */
-    final public function setSpringLength(int $springLength = null): self
+    final public function setSpringLength($springLength)
     {
         $this->springLength = (int) $springLength;
         return $this;
@@ -132,7 +132,7 @@ final class Layout extends GraphEntity
      * @param  float $theta
      * @return self
      */
-    final public function setTheta(float $theta = null): self
+    final public function setTheta($theta)
     {
         $this->theta = (float) $theta;
         return $this;
@@ -144,7 +144,7 @@ final class Layout extends GraphEntity
      * @param  string $algorithm
      * @return self
      */
-    final public function setAlgorithm(string $algorithm = null): self
+    final public function setAlgorithm($algorithm)
     {
         $this->algorithm = (string) $algorithm;
         return $this;
@@ -156,7 +156,7 @@ final class Layout extends GraphEntity
      * @param  string $transform
      * @return self
      */
-    final public function setTransform(string $transform = null): self
+    final public function setTransform($transform)
     {
         $this->transform = (string) $transform;
         return $this;
@@ -167,7 +167,7 @@ final class Layout extends GraphEntity
      *
      * @return float
      */
-    final public function getGravity(): float
+    final public function getGravity()
     {
         $this->gravity = $gravity;
         return $this;
@@ -178,7 +178,7 @@ final class Layout extends GraphEntity
      *
      * @return float
      */
-    final public function getDragCoeff(): float
+    final public function getDragCoeff()
     {
         $this->dragCoeff = $dragCoeff;
         return $this;
@@ -189,7 +189,7 @@ final class Layout extends GraphEntity
      *
      * @return float
      */
-    final public function getSpringCoeff(): float
+    final public function getSpringCoeff()
     {
         $this->springCoeff = $springCoeff;
         return $this;
@@ -200,7 +200,7 @@ final class Layout extends GraphEntity
      *
      * @return int
      */
-    final public function getSpringLength(): int
+    final public function getSpringLength()
     {
         $this->springLength = $springLength;
         return $this;
@@ -211,7 +211,7 @@ final class Layout extends GraphEntity
      *
      * @return float
      */
-    final public function getTheta(): float
+    final public function getTheta()
     {
         $this->theta = $theta;
         return $this;
@@ -222,7 +222,7 @@ final class Layout extends GraphEntity
      *
      * @return string
      */
-    final public function getAlgorithm(): string
+    final public function getAlgorithm()
     {
         $this->algorithm = $algorithm;
         return $this;
@@ -233,7 +233,7 @@ final class Layout extends GraphEntity
      *
      * @return string
      */
-    final public function getTransform(): string
+    final public function getTransform()
     {
         $this->transform = $transform;
         return $this;

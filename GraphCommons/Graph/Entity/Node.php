@@ -132,7 +132,7 @@ final class Node extends GraphEntity
      * @param  string $id
      * @return self
      */
-    final public function setId(string $id): self
+    final public function setId($id)
     {
         $this->id = $id;
         return $this;
@@ -144,7 +144,7 @@ final class Node extends GraphEntity
      * @param  GraphCommons\Graph\Entity\NodeType $type
      * @return self
      */
-    final public function setType(NodeType $type = null): self
+    final public function setType(NodeType $type)
     {
         $this->type = $type;
         return $this;
@@ -156,7 +156,7 @@ final class Node extends GraphEntity
      * @param  string $typeId
      * @return self
      */
-    final public function setTypeId(string $typeId = null): self
+    final public function setTypeId($typeId)
     {
         $this->typeId = (string) $typeId;
         return $this;
@@ -168,7 +168,7 @@ final class Node extends GraphEntity
      * @param  string $name
      * @return self
      */
-    final public function setName(string $name = null): self
+    final public function setName($name)
     {
         $this->name = (string) $name;
         return $this;
@@ -180,7 +180,7 @@ final class Node extends GraphEntity
      * @param  string $description
      * @return self
      */
-    final public function setDescription(string $description = null): self
+    final public function setDescription($description)
     {
         $this->description = (string) $description;
         return $this;
@@ -192,7 +192,7 @@ final class Node extends GraphEntity
      * @param  string $image
      * @return self
      */
-    final public function setImage(string $image = null): self
+    final public function setImage($image)
     {
         $this->image = (string) $image;
         return $this;
@@ -204,7 +204,7 @@ final class Node extends GraphEntity
      * @param  string $reference
      * @return self
      */
-    final public function setReference(string $reference = null): self
+    final public function setReference($reference)
     {
         $this->reference = (string) $reference;
         return $this;
@@ -216,7 +216,7 @@ final class Node extends GraphEntity
      * @param  \stdClass $properties
      * @return self
      */
-    final public function setProperties(\stdClass $properties = null): self
+    final public function setProperties($properties)
     {
         $this->properties = (object) $properties;
         return $this;
@@ -228,7 +228,7 @@ final class Node extends GraphEntity
      * @param  float $posX
      * @return self
      */
-    final public function setPosX(float $posX = null): self
+    final public function setPosX($posX)
     {
         $this->posX = (float) $posX;
         return $this;
@@ -240,7 +240,7 @@ final class Node extends GraphEntity
      * @param  float $posY
      * @return self
      */
-    final public function setPosY(float $posY = null): self
+    final public function setPosY($posY)
     {
         $this->posY = (float) $posY;
         return $this;
@@ -253,7 +253,7 @@ final class Node extends GraphEntity
      * @param  float $posY
      * @return self
      */
-    final public function setPosXY(float $posX = null, float $posY = null): self
+    final public function setPosXY($posX, $posY)
     {
         $this->posX = (float) $posX;
         $this->posY = (float) $posY;
@@ -266,7 +266,7 @@ final class Node extends GraphEntity
      * @param  string $createdAt
      * @return self
      */
-    final public function setCreatedAt(string $createdAt = null): self
+    final public function setCreatedAt($createdAt)
     {
         $this->createdAt = (string) $createdAt;
         return $this;
@@ -278,7 +278,7 @@ final class Node extends GraphEntity
      * @param  string $updatedAt
      * @return self
      */
-    final public function setUpdatedAt(string $updatedAt = null): self
+    final public function setUpdatedAt($updatedAt)
     {
         $this->updatedAt = (string) $updatedAt;
         return $this;
@@ -290,11 +290,9 @@ final class Node extends GraphEntity
      * @param  array $hubs
      * @return self
      */
-    final public function setHubs(array $hubs = null): self
+    final public function setHubs($hubs)
     {
-        if (!is_null($hubs)) {
-            $this->hubs = $hubs;
-        }
+        $this->hubs = (array) $hubs;
         return $this;
     }
 
@@ -304,11 +302,9 @@ final class Node extends GraphEntity
      * @param  array $users
      * @return self
      */
-    final public function setUsers(array $users = null): self
+    final public function setUsers($users)
     {
-        if (!is_null($users)) {
-            $this->users = $users;
-        }
+        $this->users = (array) $users;
         return $this;
     }
 
@@ -318,11 +314,9 @@ final class Node extends GraphEntity
      * @param  array $graphs
      * @return self
      */
-    final public function setGraphs(array $graphs = null): self
+    final public function setGraphs($graphs)
     {
-        if (!is_null($graphs)) {
-            $this->graphs = $graphs;
-        }
+        $this->graphs = (array) $graphs;
         return $this;
     }
 
@@ -332,11 +326,9 @@ final class Node extends GraphEntity
      * @param  int $graphsCount
      * @return self
      */
-    final public function setGraphsCount(int $graphsCount = null): self
+    final public function setGraphsCount($graphsCount)
     {
-        if (!is_null($graphsCount)) {
-            $this->graphsCount = $graphsCount;
-        }
+        $this->graphsCount = (int) $graphsCount;
         return $this;
     }
 
@@ -346,7 +338,7 @@ final class Node extends GraphEntity
      * @param  int $status
      * @return self
      */
-    final public function setStatus(int $status = null): self
+    final public function setStatus($status)
     {
         $this->status = (int) $status;
         return $this;
@@ -357,7 +349,7 @@ final class Node extends GraphEntity
      *
      * @return string
      */
-    final public function getId(): string
+    final public function getId()
     {
         return $this->id;
     }
@@ -367,7 +359,7 @@ final class Node extends GraphEntity
      *
      * @return GraphCommons\Graph\Entity\NodeType
      */
-    final public function getType(): NodeType
+    final public function getType()
     {
         return $this->type;
     }
@@ -377,7 +369,7 @@ final class Node extends GraphEntity
      *
      * @return string
      */
-    final public function getTypeId(): string
+    final public function getTypeId()
     {
         return $this->typeId;
     }
@@ -387,7 +379,7 @@ final class Node extends GraphEntity
      *
      * @return string
      */
-    final public function getName(): string
+    final public function getName()
     {
         return $this->name;
     }
@@ -397,7 +389,7 @@ final class Node extends GraphEntity
      *
      * @return string
      */
-    final public function getDescription(): string
+    final public function getDescription()
     {
         return $this->description;
     }
@@ -407,7 +399,7 @@ final class Node extends GraphEntity
      *
      * @return string
      */
-    final public function getImage(): string
+    final public function getImage()
     {
         return $this->image;
     }
@@ -417,7 +409,7 @@ final class Node extends GraphEntity
      *
      * @return string
      */
-    final public function getReference(): string
+    final public function getReference()
     {
         return $this->reference;
     }
@@ -427,7 +419,7 @@ final class Node extends GraphEntity
      *
      * @return \stdClass
      */
-    final public function getProperties(): \stdClass
+    final public function getProperties()
     {
         return $this->properties;
     }
@@ -437,7 +429,7 @@ final class Node extends GraphEntity
      *
      * @return float
      */
-    final public function getPosX(): float
+    final public function getPosX()
     {
         return $this->posX;
     }
@@ -447,7 +439,7 @@ final class Node extends GraphEntity
      *
      * @return float
      */
-    final public function getPosY(): float
+    final public function getPosY()
     {
         return $this->posY;
     }
@@ -457,7 +449,7 @@ final class Node extends GraphEntity
      *
      * @return array
      */
-    final public function getPosXY(): array
+    final public function getPosXY()
     {
         return array($this->posX, $this->posY);
     }
@@ -467,7 +459,7 @@ final class Node extends GraphEntity
      *
      * @return string
      */
-    final public function getCreatedAt(): string
+    final public function getCreatedAt()
     {
         return $this->createdAt;
     }
@@ -477,7 +469,7 @@ final class Node extends GraphEntity
      *
      * @return string
      */
-    final public function getUpdatedAt(): string
+    final public function getUpdatedAt()
     {
         return $this->updatedAt;
     }
@@ -487,7 +479,7 @@ final class Node extends GraphEntity
      *
      * @return array
      */
-    final public function getHubs(): array
+    final public function getHubs()
     {
         return $this->hubs;
     }
@@ -497,7 +489,7 @@ final class Node extends GraphEntity
      *
      * @return array
      */
-    final public function getUsers(): array
+    final public function getUsers()
     {
         return $this->users;
     }
@@ -507,7 +499,7 @@ final class Node extends GraphEntity
      *
      * @return array
      */
-    final public function getGraphs(): array
+    final public function getGraphs()
     {
         return $this->graphs;
     }
@@ -517,7 +509,7 @@ final class Node extends GraphEntity
      *
      * @return int
      */
-    final public function getGraphsCount(): int
+    final public function getGraphsCount()
     {
         return $this->graphsCount;
     }
@@ -527,7 +519,7 @@ final class Node extends GraphEntity
      *
      * @return int
      */
-    final public function getStatus(): int
+    final public function getStatus()
     {
         return $this->status;
     }
