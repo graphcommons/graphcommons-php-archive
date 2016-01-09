@@ -71,7 +71,7 @@ class SignalCollection extends Collection
     {
         $array = array();
         foreach ($this->data as $data) {
-            $array['signals'][] = $data->unserialize();
+            $array[] = $data->unserialize();
         }
 
         return $array;
