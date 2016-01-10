@@ -1,8 +1,8 @@
 {
-    "name": "qeremy/graphcommons-php",
+    "name": "graphcommons/graphcommons-php",
     "type": "library",
     "version": "1.0.0",
-    "homepage": "http://github.com/qeremy/graphcommons-php",
+    "homepage": "http://github.com/graphcommons/graphcommons-php",
     "description": "PHP Wrapper for Graph Commons API/v1",
     "keywords": ["graphcommons", "graph commons", "rest", "php"],
     "license": "The MIT License (MIT)",
