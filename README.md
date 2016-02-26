@@ -113,19 +113,17 @@ $graph = $gc->api->addGraph($graph);
 
 ```php
 $graph = $gc->api->addGraphSignal(
-    '<GRAPH ID>', SignalCollection::fromArray(array(
-        array(
+    '<GRAPH ID>', SignalCollection::fromArray([
+        [
             'action'        => Signal::EDGE_CREATE,
-            'parameters'    => array(
+            'parameters'    => [
                 'from_name' => 'Ahmet',
                 'from_type' => 'Person',
                 'to_name'   => 'Fatih',
                 'to_type'   => 'Person',
                 'name'      => 'COLLABORATED',
-                'weight'    => 2,
-            ),
-        ),
-)));
+                'weight'    => 2]],
+]));
 ```
 
 ##### Get Graph Types
