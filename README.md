@@ -21,7 +21,7 @@ Notice: See Graph Commons's official documents [here](//graphcommons.github.io/a
 
 ```js
 // composer.json
-{"require": {"graphcommons/graphcommons-php": "dev-master"}}
+{"require": {"graphcommons/graphcommons-php": "~1.0"}}
 ```
 
 ```php
